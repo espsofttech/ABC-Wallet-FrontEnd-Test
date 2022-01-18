@@ -1,47 +1,17 @@
-name: DEPLOY
-on:
-  push:
-    branches:
-    - main
-
+name: GitHub Actions Demo
+on: [push]
 jobs:
-  Deployment:
-    runs-on: self-hosted
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup node 12
-        uses: actions/setup-node@v2
-        with:
-          node-version: 12.x
-      - run: npm install
-      - uses: actions/checkout@v2
-      - name: rsync deployments
-        uses: burnett01/rsync-deployments@5.1
-        with:
-          switches: -avzr --delete
-          path: .
-          remote_path: /var/www/html/abc-wallet-test
-          remote_host: 65.1.3.232
-          remote_user: ubuntu
-          remote_key: ${{ secrets.DEPLOY_KEYS }}
-
-  RunningCommands:
-    name: Start Application
-    needs: Deployment
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: 65.1.3.232 
-        username: ubuntu
-        key: ${{ secrets.DEPLOY_KEYS }} 
-        port: 22 
-        script: |
-          cd /var/www/html/abc-wallet-test
-          sudo kill -9 $(sudo lsof -t -i:3000)
-          screen -d -m bash -c 'npm install; npm start;'
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
