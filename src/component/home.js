@@ -92,7 +92,7 @@ const Home = (props) => {
                                             <h3 className="special-head dark">Barteka Home Center (Do it Best)</h3>
                                         </div>
                                         <h1 className="big fadeInUp" data-wow-delay="0.2s">The most trusted &amp; secure coin wallet</h1>
-                                        <p className="w-text fadeInUp" data-wow-delay="0.3s">Buy, store, Send, Receive &amp; earn coin.</p>
+                                        <p className="w-text fadeInUp" data-wow-delay="0.3s">Buy, store, Send,  &amp; earn coin.</p>
                                         <div className="dream-btn-group fadeInUp" data-wow-delay="0.4s">
                                             <NavLink to={loginData.length === 0 ? `${config.baseUrl}Login` : `${config.baseUrl}`} style={{ cursor: loginData.length === 0 ? '' : 'not-allowed' }} className="btn more-btn mr-3">Sigin</NavLink>
                                             <NavLink to={loginData.length === 0 ? `${config.baseUrl}Signup` : `${config.baseUrl}`} style={{ cursor: loginData.length === 0 ? '' : 'not-allowed' }} className="btn more-btn">Signup</NavLink>
