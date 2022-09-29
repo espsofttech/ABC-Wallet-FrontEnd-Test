@@ -2,17 +2,17 @@ const config = {
 
     //=========================  Localhost ========================
 
-    // baseUrl: '/',
-    // apiUrl: "https://espsofttech.tech:6017/api/",
-    // imageUrl: "https://espsofttech.tech/abc-wallet/backend/uploads/",
-    // // loaderType:"Ball-Triangle"
+    baseUrl: '/',
+    apiUrl: "https://espsofttech.tech:6017/api/",
+    imageUrl: "https://espsofttech.tech/abc-wallet/backend/uploads/",
+    loaderType:"Ball-Triangle"
 
     //=========================  Esp server ========================
 
-    baseUrl: '/abc-wallet/',
-    apiUrl: "https://espsofttech.tech:6017/api/",
-    imageUrl:"https://espsofttech.tech/abc-wallet/backend/uploads/", 
-    loaderType:"Ball-Triangle"
+    // baseUrl: '/abc-wallet/',
+    // apiUrl: "https://espsofttech.tech:6017/api/",
+    // imageUrl:"https://espsofttech.tech/abc-wallet/backend/uploads/", 
+    // loaderType:"Ball-Triangle"
 
     //=========================  Live server ========================
 
